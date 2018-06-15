@@ -356,7 +356,7 @@ frp 提供了一种新的代理类型 **xtcp** 用于应对在希望传输大量
 以 Ubuntu 16.04.4 为例
 
 更新
-```shell
+```bash
 sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y
 ```
 
