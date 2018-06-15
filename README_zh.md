@@ -360,6 +360,7 @@ frp 提供了一种新的代理类型 **xtcp** 用于应对在希望传输大量
 sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y
 ```
 
+#### 下载安装go语言环境
 下载go语言压缩包
 ```bash
 wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
@@ -396,7 +397,7 @@ source ~/.profile
 sudo apt-get install make zip git -y
 ```
 
-
+#### 下载源码并编译
 下载最新版本的源码
 这里可以根据个人需求选择不同版本   `https://github.com/fatedier/frp/releases`
 ```bash
