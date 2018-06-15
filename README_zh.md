@@ -356,65 +356,95 @@ frp 提供了一种新的代理类型 **xtcp** 用于应对在希望传输大量
 以 Ubuntu 16.04.4 为例
 
 更新
-```shell
+```bash
 sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y
 ```
 
 下载go语言压缩包
-`wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz`
+```bash
+wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
+```
 
 解压go语言压缩包到指定地点
-`sudo tar -xf go1.10.3.linux-amd64.tar.gz -C /usr/local`
+```bash
+sudo tar -xf go1.10.3.linux-amd64.tar.gz -C /usr/local
+```
 
 添加go语言环境变量
 编辑用户档案(profile的翻译)
-`sudo nano ~/.profile`
+```bash
+sudo nano ~/.profile
+```
 
 在此文件末尾添加下面的
-`export GOPATH=$HOME/work`
-`export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin`
+```bash
+export GOPATH=$HOME/work
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+```
 
 重新编译和加载用户档案(profile)
-`source ~/.profile`
+```bash
+source ~/.profile
+```
 
 
-这里你输入go试一下，就会发现Ubuntu列出了go的使用手册(man)
+这里你输入`go`试一下，就会发现Ubuntu列出了go的使用手册(man)
 
 
 安装make，zip，git 已经安装的话会自动忽略
-`sudo apt-get install make zip git -y`
+```bash
+sudo apt-get install make zip git -y
+```
 
 
 下载最新版本的源码
 这里可以根据个人需求选择不同版本   `https://github.com/fatedier/frp/releases`
-`wget https://github.com/fatedier/frp/archive/v0.20.0.tar.gz`
+```bash
+wget https://github.com/fatedier/frp/archive/v0.20.0.tar.gz
+```
 
 建立文件夹树
 work是go语言默认工作区域，前面添加了这个环境变量。src则是源码区。后面是作者的GitHub。源码中很多地方有 import /github.com/fatedier/frp/* 之类的，所以需要。
-`mkdir -p work/src/github.com/fatedier/`
+```bash
+mkdir -p work/src/github.com/fatedier/
+```
 
 将下载的源码解压到指定位置
-`sudo tar -xzf v0.20.0.tar.gz -C work/src/github.com/fatedier/`
+```bash
+sudo tar -xzf v0.20.0.tar.gz -C work/src/github.com/fatedier/
+```
 
 到fatedier文件夹下
-`cd work/src/github.com/fatedier/`
+```bash
+cd work/src/github.com/fatedier/
+```
 
 更改文件夹名，理由同上(import)
-`mv frp-0.20.0/ frp/`
+```bash
+mv frp-0.20.0/ frp/
+```
 
 将文件夹权限变更成现有用户和组
-`sudo chown -R $USER:$GROUPS frp/`
+```bash
+sudo chown -R $USER:$GROUPS frp/
+```
 
 到源码文件夹下
-`cd frp/`
+```bash
+cd frp/
+```
 
 编辑文件：Makefile.cross-compiles。注释掉不需要的版本，不然编译时间长且多出不少无用文件
-`sudo nano Makefile.cross-compiles`
+```bash
+sudo nano Makefile.cross-compiles
+```
 例如
 ![mkcross](/doc/pic/mkcross.jpg)
 
 启动编译脚本
-`./package.sh`
+```bash
+./package.sh
+```
 
 编译完成后即可在新出现的packages文件夹下查看
 
